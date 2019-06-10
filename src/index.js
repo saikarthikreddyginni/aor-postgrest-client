@@ -111,6 +111,7 @@ export default (apiUrl, httpClient = fetchJson) => {
           }
           case UPDATE: {
               url = `${apiUrl}/${resource}?id=eq.${params.id}`;
+              options.headers.set('Accept', 'application/vnd.pgrst.object+json');
               options.headers.set('Prefer', 'return=representation');
               options.method = 'PATCH';
               options.body = JSON.stringify(params.data);
