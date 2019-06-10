@@ -162,6 +162,10 @@ export default (apiUrl, httpClient = fetchJson) => {
             };
         case CREATE:
             return { data: { ...params.data, id: json.id } };
+        case DELETE:
+            return { data: [] };
+        case DELETE_MANY:
+            return { data: [] };          
         default:
             return { data: json };
         }
